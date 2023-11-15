@@ -20,7 +20,7 @@ document.getElementById("case-number-plus").addEventListener("click", function()
     const taxAmount = taxAmountTotal(getsubtotal);
 
     const newTotalPrice = getsubtotal + taxAmount;
-    CalculateTotalPrice(newTotalPrice);
+    CalculateNewTotalPrice(newTotalPrice);
 })
 
 document.getElementById("case-number-minus").addEventListener("click", function(){
@@ -37,7 +37,7 @@ document.getElementById("case-number-minus").addEventListener("click", function(
     const taxAmount = taxAmountTotal(getsubtotal);
 
     const newTotalPrice = getsubtotal + taxAmount;
-    CalculateTotalPrice(newTotalPrice);
+    CalculateNewTotalPrice(newTotalPrice);
 })
 
 document.getElementById("remove-case").addEventListener("click", function(){

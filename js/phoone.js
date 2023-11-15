@@ -18,7 +18,7 @@ document.getElementById("phone-number-plus").addEventListener("click", function(
     const taxAmount = taxAmountTotal(getsubtotal);
 
     const newTotalPrice = getsubtotal + taxAmount;
-    CalculateTotalPrice(newTotalPrice);
+    CalculateNewTotalPrice(newTotalPrice);
 
 
 })
@@ -36,7 +36,7 @@ document.getElementById("phone-number-minus").addEventListener("click", function
     const taxAmount = taxAmountTotal(getsubtotal);
 
     const newTotalPrice = getsubtotal + taxAmount;
-    CalculateTotalPrice(newTotalPrice);
+    CalculateNewTotalPrice(newTotalPrice);
 })
 
 document.getElementById("remove-phone").addEventListener("click", function(){

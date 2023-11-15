@@ -40,7 +40,7 @@ function subtotalPrice(id, currentTotalPhonePrice, currentTotalCasePrice) {
   return getsubtotal;
 }
 
-function CalculateTotalPrice(newTotalPrice){
+function CalculateNewTotalPrice(newTotalPrice){
     const totalPrice = document.getElementById("total-amount");
     totalPrice.innerText = newTotalPrice;
     return newTotalPrice;
