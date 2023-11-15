@@ -48,7 +48,7 @@ function CalculateNewTotalPrice(newTotalPrice){
 
 document.getElementById("checkout").addEventListener("click", function(){
     const checkoutAmountString = document.getElementById("total-amount").innerText;
-    const checkoutAmount = parseFloat(checkoutAmountString);
+    // const checkoutAmount = parseFloat(checkoutAmountString);
     alert("your total amount is : " + checkoutAmountString)
 })
 

@@ -34,12 +34,35 @@ document.getElementById("case-number-minus").addEventListener("click", function(
     
     
     const getsubtotal = subtotalPrice("subtotal", currentTotalPhonePrice, currentTotalCasePrice);
+    // tax
     const taxAmount = taxAmountTotal(getsubtotal);
-
+    // total
     const newTotalPrice = getsubtotal + taxAmount;
     CalculateNewTotalPrice(newTotalPrice);
 })
 
 document.getElementById("remove-case").addEventListener("click", function(){
+    
+    // const casePriceString = document.getElementById("case-price").innerText;
+    // const casePrice = parseFloat(casePriceString);
+
+    // const subtotal = document.getElementById("subtotal");
+    // const subtotalString = subtotal.innerText;
+    // const subtotalAmount = parseFloat(subtotalString);
+
+    // const newSubtotal = subtotalAmount - casePrice;
+    // subtotal.innerText = newSubtotal;
+
+    // const tax = document.getElementById("tax-amount");
+    // const taxString = tax.innerText;
+    // const taxAmount = parseFloat(taxString);
+    // const newTax = parseFloat((newSubtotal * 0.1).toFixed(2));
+    // tax.innerText = newTax;
+
+    // const totalAmount = document.getElementById("total-amount");
+    // const totalAmountString = totalAmount.innerText;
+    // const newTotalAmount = newSubtotal + newTax;
+    // totalAmount.innerText = newTotalAmount;
+
     removeItem("case-card");
 })
