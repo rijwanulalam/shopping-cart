@@ -1,15 +1,31 @@
-
-function calculateCasePrice(priceId ,newCaseNumber){
-    const casePrice = document.getElementById(priceId);
-    const newCasePrice = newCaseNumber * 59;
-    casePrice.innerText = newCasePrice;
+function calculatePhonePrice(inputId, newPhoneNumber){
+    const phonePrice = document.getElementById(inputId);
+    const newPhonePrice = newPhoneNumber * 1219;
+    phonePrice.innerText = newPhonePrice;
 }
 
 
-document.getElementById("case-number-plus").addEventListener("click", function(){
-    
-    const newCaseNumber =  increaseDecrease("case-number-field",true);
-    calculateCasePrice("case-price", newCaseNumber);
+document.getElementById("phone-number-plus").addEventListener("click", function(){
+    const newPhoneNumber = increaseDecrease("phone-number-field", true);
+    calculatePhonePrice("phone-price", newPhoneNumber);
+
+    // calculate subtotal
+    const currentTotalPhonePrice = calculateTotalPrice("phone-price");
+    const currentTotalCasePrice = calculateTotalPrice("case-price");
+
+    const getsubtotal = subtotalPrice("subtotal", currentTotalPhonePrice, currentTotalCasePrice);
+
+    const taxAmount = taxAmountTotal(getsubtotal);
+
+    const newTotalPrice = getsubtotal + taxAmount;
+    CalculateTotalPrice(newTotalPrice);
+
+
+})
+
+document.getElementById("phone-number-minus").addEventListener("click", function(){
+    const newPhoneNumber = increaseDecrease("phone-number-field", false);
+    calculatePhonePrice("phone-price", newPhoneNumber);
 
     // calculate subtotal
     const currentTotalPhonePrice = calculateTotalPrice("phone-price");
@@ -23,23 +39,6 @@ document.getElementById("case-number-plus").addEventListener("click", function()
     CalculateTotalPrice(newTotalPrice);
 })
 
-document.getElementById("case-number-minus").addEventListener("click", function(){
-    
-    const newCaseNumber =  increaseDecrease("case-number-field",false);
-    calculateCasePrice("case-price", newCaseNumber);
-
-    // calculate subtotal
-    const currentTotalPhonePrice = calculateTotalPrice("phone-price");
-    const currentTotalCasePrice = calculateTotalPrice("case-price");
-    
-    
-    const getsubtotal = subtotalPrice("subtotal", currentTotalPhonePrice, currentTotalCasePrice);
-    const taxAmount = taxAmountTotal(getsubtotal);
-
-    const newTotalPrice = getsubtotal + taxAmount;
-    CalculateTotalPrice(newTotalPrice);
-})
-
-document.getElementById("remove-case").addEventListener("click", function(){
-    removeItem("case-card");
+document.getElementById("remove-phone").addEventListener("click", function(){
+    removeItem("phone-card");
 })
